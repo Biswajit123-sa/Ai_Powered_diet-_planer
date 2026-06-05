@@ -17,7 +17,7 @@ const Register = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.post('/api/auth/register', formData);
+      const response = await axios.post(' https://ai-powered-diet-planer.onrender.com/api/auth/register', formData);
       if (response.data) {
         // Typically after register, you might auto-login or redirect to login.
         // Assuming the backend returns the token on register. If not, redirect to login.
