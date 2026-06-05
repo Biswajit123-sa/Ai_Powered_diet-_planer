@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "AI-powered nutrition assistant backend API with Express and MongoDB",
   "main": "server.js",
+  "type": "commonjs",
+
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node --watch server.js",
+    "test": "echo \"No tests configured\""
   },
+
   "keywords": [
     "nutrition",
     "diet",
@@ -16,12 +19,14 @@
     "express",
     "mongodb"
   ],
+
   "author": "Your Name",
   "license": "MIT",
+
   "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=9.0.0"
+    "node": ">=18.0.0"
   },
+
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "bcrypt": "^6.0.0",
@@ -30,7 +35,5 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.3.3"
-  },
-  "devDependencies": {},
-  "type": "commonjs"
+  }
 }
