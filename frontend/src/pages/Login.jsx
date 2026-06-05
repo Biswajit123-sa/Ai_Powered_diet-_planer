@@ -17,7 +17,8 @@ const Login = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.post(' https://ai-powered-diet-planer.onrender.com/api/auth/login', formData);
+      const base = import.meta.env.VITE_API_URL || '';
+      const response = await axios.post(`${base}/api/auth/login`, formData);
       if (response.data && response.data.token) {
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('user', JSON.stringify(response.data.user));

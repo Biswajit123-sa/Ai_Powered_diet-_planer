@@ -61,7 +61,8 @@ const Chat = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.post(' https://ai-powered-diet-planer.onrender.com/api/chat', { message: userMsg }, {
+      const base = import.meta.env.VITE_API_URL || '';
+      const response = await axios.post(`${base}/api/chat`, { message: userMsg }, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const aiReply = response.data.data || response.data.reply || response.data.message || 'I received your message.';

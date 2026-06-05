@@ -36,7 +36,8 @@ const Diet = () => {
         userId: user?._id || user?.id
       };
 
-      const response = await axios.post(' https://ai-powered-diet-planer.onrender.com/api/diet/generate', payload, {
+      const base = import.meta.env.VITE_API_URL || '';
+      const response = await axios.post(`${base}/api/diet/generate`, payload, {
         headers: {
           Authorization: `Bearer ${token}`
         }
